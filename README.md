@@ -10,13 +10,12 @@
 </p>
 
 <p align="center">
-  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&color=7159c1&labelColor=000000" />
+  <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&style=flat-square&color=7159c1&labelColor=000000" />
   <img src="https://img.shields.io/badge/reactjs-16.13.1-61dafb?style=flat-square&logo=react&color=7159c1&labelColor=000000" />
+  <img src="https://img.shields.io/badge/eslint-6.8.0-4b32c3?style=flat-square&logo=eslint&color=7159c1&labelColor=000000" />
+  <img src="https://flat.badgen.net/badge/style-guide/airbnb/ff5a5f?icon=airbnb&color=7159c1&labelColor=000000" />
 </p>
-  [![react](https://img.shields.io/badge/reactjs-16.13.1-61dafb?style=flat-square&logo=react)](https://reactjs.org/)
-[![eslint](https://img.shields.io/badge/eslint-6.8.0-4b32c3?style=flat-square&logo=eslint)](https://eslint.org/)
 [![airbnb-style](https://flat.badgen.net/badge/style-guide/airbnb/ff5a5f?icon=airbnb)](https://github.com/airbnb/javascript)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](http://makeapullrequest.com)
 
 <br>
 
