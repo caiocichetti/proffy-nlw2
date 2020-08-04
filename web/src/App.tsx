@@ -4,12 +4,12 @@ import './assets/styles/global.css';
 
 import Routes from './routes';
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
       <Routes />
     </div>
   );
-}
+};
 
 export default App;

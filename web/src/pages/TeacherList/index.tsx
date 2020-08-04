@@ -5,7 +5,7 @@ import TeacherItem from '../../components/TeacherItem';
 
 import './styles.css';
 
-function TeacherList() {
+const TeacherList: React.FC = () => {
   return (
     <div id="page-teacher-list" className="container">
       <PageHeader title="Estes são os proffys disponíveis.">
@@ -29,14 +29,8 @@ function TeacherList() {
 
       <main>
         <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
-        <TeacherItem />
       </main>
     </div>
   );
-}
+};
 export default TeacherList;
