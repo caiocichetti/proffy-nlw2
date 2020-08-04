@@ -11,6 +11,7 @@
 
 <p align="center">
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&style=flat-square&color=7159c1&labelColor=000000" />
+  <img src="https://img.shields.io/github/languages/count/caiocichetti/proffy-nlw2?style=flat-square&color=7159c1&labelColor=000000" /> 
   <img src="https://img.shields.io/badge/reactjs-16.13.1-61dafb?style=flat-square&logo=react&color=7159c1&labelColor=000000" />
   <img src="https://img.shields.io/badge/eslint-6.8.0-4b32c3?style=flat-square&logo=eslint&color=7159c1&labelColor=000000" />
   <img src="https://flat.badgen.net/badge/style-guide/airbnb/ff5a5f?icon=airbnb&color=7159c1&labelColor=000000" />
