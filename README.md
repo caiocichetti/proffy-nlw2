@@ -15,7 +15,6 @@
   <img src="https://img.shields.io/badge/eslint-6.8.0-4b32c3?style=flat-square&logo=eslint&color=7159c1&labelColor=000000" />
   <img src="https://flat.badgen.net/badge/style-guide/airbnb/ff5a5f?icon=airbnb&color=7159c1&labelColor=000000" />
 </p>
-[![airbnb-style](https://flat.badgen.net/badge/style-guide/airbnb/ff5a5f?icon=airbnb)](https://github.com/airbnb/javascript)
 
 <br>
 
