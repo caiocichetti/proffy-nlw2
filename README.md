@@ -11,7 +11,6 @@
 
 <p align="center">
   <img alt="License" src="https://img.shields.io/static/v1?label=license&message=MIT&style=flat-square&color=7159c1&labelColor=000000" />
-  <img src="https://img.shields.io/github/languages/count/caiocichetti/proffy-nlw2?style=flat-square&color=7159c1&labelColor=000000" /> 
   <img alt="node-current (scoped with tag, custom registry)" src="https://img.shields.io/node/v/@stdlib/stdlib/latest?style=flat-square&color=7159c1&labelColor=000000" /> 
   <img alt="npm type definitions" src="https://img.shields.io/npm/types/typescript?style=flat-square&logo=typescript&color=7159c1&labelColor=000000" /> 
   <img src="https://img.shields.io/badge/reactjs-16.13.1-61dafb?style=flat-square&logo=react&color=7159c1&labelColor=000000" />
