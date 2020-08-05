@@ -15,7 +15,9 @@ interface ScheduleItem {
 routes.post('/classes', async (request, response) => {
   const { name, avatar, whatsapp, bio, subject, cost, schedule } = request.body;
 
-  const insertedUserIds = await db('users').insert({
+  const trx = await db.transaction();
+
+  const insertedUserIds = await trx('users').insert({
     name,
     avatar,
     whatsapp,
@@ -24,7 +26,7 @@ routes.post('/classes', async (request, response) => {
 
   const user_id = insertedUserIds[0];
 
-  const insertedClassesIds = await db('classes').insert({
+  const insertedClassesIds = await trx('classes').insert({
     subject,
     cost,
     user_id,
@@ -41,7 +43,9 @@ routes.post('/classes', async (request, response) => {
     };
   });
 
-  await db('class_schedule').insert(classSchedule);
+  await trx('class_schedule').insert(classSchedule);
+
+  await trx.commit();
 
   return response.send();
 });
