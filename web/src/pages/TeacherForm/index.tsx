@@ -22,7 +22,7 @@ const TeacherForm: React.FC = () => {
           <Input name="name" label="Nome Completo" />
           <Input name="avatar" label="Avatar" />
           <Input name="whatsapp" label="Whatsapp" />
-          <Textarea name="bio" label="Biografia" />
+          <Textarea name="bio" label="Biografia" /
         </fieldset>
 
         <fieldset>
