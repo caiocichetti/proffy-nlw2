@@ -6,13 +6,12 @@ export async function up(knex: Knex) {
     table.string('subject').notNullable();
     table.decimal('cost').notNullable();
 
-    table
-      .integer('user_id')
+    table.integer('user_id')
       .notNullable()
       .references('id')
       .inTable('users')
-      .onUpdate('CASCADE')
-      .onDelete('CASCADE');
+      .onDelete('CASCADE')
+      .onUpdate('CASCADE');
   });
 }
 
