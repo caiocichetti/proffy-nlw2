@@ -1,21 +1,22 @@
 import React from 'react';
 
-import whatsapp from '../../assets/images/icons/whatsapp.svg';
+import whatsappIcon from '../../assets/images/icons/whatsapp.svg';
 
-import './styles.css';
 import api from '../../services/api';
 
+import './styles.css';
+
 export interface Teacher {
+  id: number;
   avatar: string;
   bio: string;
   cost: number;
-  id: number;
   name: string;
   subject: string;
   whatsapp: string;
 }
 
-interface TeacherItemProps {
+export interface TeacherItemProps {
   teacher: Teacher;
 }
 
@@ -35,21 +36,24 @@ const TeacherItem: React.FC<TeacherItemProps> = ({ teacher }) => {
           <span>{teacher.subject}</span>
         </div>
       </header>
-
       <p>{teacher.bio}</p>
 
       <footer>
         <p>
           Preço/hora
-          <strong>{teacher.cost}</strong>
+          <strong>R$ {teacher.cost}</strong>
         </p>
-        <a target="_blank" href={`https://wa.me/${teacher.whatsapp}`}>
-          <img src={whatsapp} alt="Whatsapp" />
+        <a
+          onClick={createNewConnection}
+          target="_blank"
+          href={`https://wa.me/${teacher.whatsapp}`}
+        >
+          <img src={whatsappIcon} alt="Whatsapp"/>
           Entrar em contato
         </a>
       </footer>
     </article>
   );
-};
+}
 
 export default TeacherItem;
