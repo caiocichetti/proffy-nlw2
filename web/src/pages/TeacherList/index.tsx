@@ -4,13 +4,16 @@ import PageHeader from '../../components/PageHeader';
 import TeacherItem, { Teacher } from '../../components/TeacherItem';
 import Input from '../../components/Input';
 import Select from '../../components/Select';
+
 import api from '../../services/api';
+
 import './styles.css';
 
 function TeacherList() {
   const [teachers, setTeachers] = useState([]);
+
   const [subject, setSubject] = useState('');
-  const [week_day, setWekDay] = useState('');
+  const [week_day, setWeekDay] = useState('');
   const [time, setTime] = useState('');
 
   async function searchTeachers(e: FormEvent) {
@@ -18,9 +21,7 @@ function TeacherList() {
 
     const response = await api.get('classes', {
       params: {
-        subject,
-        week_day,
-        time,
+        subject, week_day, time,
       },
     });
 
@@ -40,21 +41,20 @@ function TeacherList() {
               { value: 'Artes', label: 'Artes' },
               { value: 'Biologia', label: 'Biologia' },
               { value: 'Ciências', label: 'Ciências' },
-              { value: 'Educação física', label: 'Educação física' },
+              { value: 'Educação Física', label: 'Educação Física' },
               { value: 'Física', label: 'Física' },
-              { value: 'Geografía', label: 'Geografía' },
+              { value: 'Geografia', label: 'Geografia' },
               { value: 'História', label: 'História' },
               { value: 'Matemática', label: 'Matemática' },
               { value: 'Português', label: 'Português' },
               { value: 'Química', label: 'Química' },
-              { value: 'Inglês', label: 'Inglês' },
             ]}
           />
           <Select
             name="week_day"
             label="Dia da semana"
             value={week_day}
-            onChange={e => setWekDay(e.target.value)}
+            onChange={e => setWeekDay(e.target.value)}
             options={[
               { value: '0', label: 'Domingo' },
               { value: '1', label: 'Segunda-feira' },
@@ -67,12 +67,11 @@ function TeacherList() {
           />
           <Input
             name="time"
-            type="time"
             label="Hora"
             value={time}
             onChange={e => setTime(e.target.value)}
+            type="time"
           />
-
           <button type="submit">Buscar</button>
         </form>
       </PageHeader>
