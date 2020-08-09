@@ -10,7 +10,7 @@ interface ScheduleItem {
 }
 
 export default class ClassesController {
-  async index(request: Request, response: Response) {
+  async index (request: Request, response: Response) {
     const filters = request.query;
 
     const subject = filters.subject as string;
@@ -26,13 +26,13 @@ export default class ClassesController {
     const timeInMinutes = convertHoursToMinutes(time);
 
     const classes = await db('classes')
-      .whereExists(function () {
+      .whereExists(function() {
         this.select('class_schedule.*')
           .from('class_schedule')
           .whereRaw('`class_schedule`.`class_id` = `classes`.`id`')
           .whereRaw('`class_schedule`.`week_day` = ??', [Number(week_day)])
           .whereRaw('`class_schedule`.`from` <= ??', [timeInMinutes])
-          .whereRaw('`class_schedule`.`to` > ??', [timeInMinutes]);
+          .whereRaw('`class_schedule`.`to` >= ??', [timeInMinutes])
       })
       .where('classes.subject', '=', subject)
       .join('users', 'classes.user_id', '=', 'users.id')
@@ -41,33 +41,20 @@ export default class ClassesController {
     return response.json(classes);
   }
 
-  async create(request: Request, response: Response) {
-    const {
-      name,
-      avatar,
-      whatsapp,
-      bio,
-      subject,
-      cost,
-      schedule,
-    } = request.body;
+  async create (request: Request, response: Response) {
+    const { name, avatar, whatsapp, bio, subject, cost, schedule } = request.body;
 
     const trx = await db.transaction();
 
     try {
       const insertedUserIds = await trx('users').insert({
-        name,
-        avatar,
-        whatsapp,
-        bio,
+        name, avatar, whatsapp, bio,
       });
 
       const user_id = insertedUserIds[0];
 
       const insertedClassesIds = await trx('classes').insert({
-        subject,
-        cost,
-        user_id,
+        subject, cost, user_id
       });
 
       const class_id = insertedClassesIds[0];
@@ -78,7 +65,7 @@ export default class ClassesController {
           week_day: scheduleItem.week_day,
           from: convertHoursToMinutes(scheduleItem.from),
           to: convertHoursToMinutes(scheduleItem.to),
-        };
+        }
       });
 
       await trx('class_schedule').insert(classSchedule);
@@ -87,6 +74,8 @@ export default class ClassesController {
 
       return response.status(201).send();
     } catch (err) {
+      console.log(err);
+
       await trx.rollback();
 
       return response.status(400).json({
