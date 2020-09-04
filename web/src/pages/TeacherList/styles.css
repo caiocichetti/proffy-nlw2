@@ -39,7 +39,7 @@
 
 @media (min-width: 700px) {
   #page-teacher-list {
-    max-width: 100%;
+    max-width: 100vw;
   }
 
   #search-teachers {
@@ -60,9 +60,5 @@
     max-width: 740px;
     margin: 0 auto;
   }
-
-  #teacher-list header,
-  #teacher-list footer {
-    padding: 3.2rem;
-  }
+  
 }

@@ -77,6 +77,11 @@
 }
 
 @media (min-width: 700px) {
+  .teacher-item header,
+  .teacher-item footer {
+    padding: 3.2rem;
+  }
+
   .teacher-item > p {
     padding: 0 3.2rem;
   }

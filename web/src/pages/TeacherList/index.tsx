@@ -21,8 +21,10 @@ function TeacherList() {
 
     const response = await api.get('classes', {
       params: {
-        subject, week_day, time,
-      },
+        subject,
+        week_day,
+        time,
+      }
     });
 
     setTeachers(response.data);
@@ -32,16 +34,16 @@ function TeacherList() {
     <div id="page-teacher-list" className="container">
       <PageHeader title="Estes são os proffys disponíveis.">
         <form id="search-teachers" onSubmit={searchTeachers}>
-          <Select
-            name="subject"
+          <Select 
+            name="subject" 
             label="Matéria"
             value={subject}
-            onChange={e => setSubject(e.target.value)}
+            onChange={(e) => { setSubject(e.target.value) }}
             options={[
               { value: 'Artes', label: 'Artes' },
               { value: 'Biologia', label: 'Biologia' },
               { value: 'Ciências', label: 'Ciências' },
-              { value: 'Educação Física', label: 'Educação Física' },
+              { value: 'Educação física', label: 'Educação física' },
               { value: 'Física', label: 'Física' },
               { value: 'Geografia', label: 'Geografia' },
               { value: 'História', label: 'História' },
@@ -50,11 +52,11 @@ function TeacherList() {
               { value: 'Química', label: 'Química' },
             ]}
           />
-          <Select
-            name="week_day"
+          <Select 
+            name="week_day" 
             label="Dia da semana"
             value={week_day}
-            onChange={e => setWeekDay(e.target.value)}
+            onChange={(e) => { setWeekDay(e.target.value) }}
             options={[
               { value: '0', label: 'Domingo' },
               { value: '1', label: 'Segunda-feira' },
@@ -65,14 +67,17 @@ function TeacherList() {
               { value: '6', label: 'Sábado' },
             ]}
           />
-          <Input
-            name="time"
+          <Input 
+            type="time" 
+            name="time" 
             label="Hora"
             value={time}
-            onChange={e => setTime(e.target.value)}
-            type="time"
+            onChange={(e) => { setTime(e.target.value) }}
           />
-          <button type="submit">Buscar</button>
+          
+          <button type="submit">
+            Buscar
+          </button>
         </form>
       </PageHeader>
 
@@ -82,7 +87,7 @@ function TeacherList() {
         })}
       </main>
     </div>
-  );
+  )
 }
 
 export default TeacherList;
