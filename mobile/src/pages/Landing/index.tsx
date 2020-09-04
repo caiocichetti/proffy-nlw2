@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from 'react';
-
+import React, { useState, useEffect } from 'react';
 import { View, Image, Text } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { RectButton } from 'react-native-gesture-handler';
@@ -19,13 +18,13 @@ function Landing() {
 
   useEffect(() => {
     api.get('connections').then(response => {
-      const { total } = response.data;
+      const { total } = response.data; 
 
       setTotalConnections(total);
-    });
+    })
   }, []);
 
-  function handleNavigateToGiveClssesPage() {
+  function handleNavigateToGiveClassesPage() {
     navigate('GiveClasses');
   }
 
@@ -43,18 +42,21 @@ function Landing() {
       </Text>
 
       <View style={styles.buttonsContainer}>
-        <RectButton
+        <RectButton 
           onPress={handleNavigateToStudyPages}
           style={[styles.button, styles.buttonPrimary]}
         >
           <Image source={studyIcon} />
+
           <Text style={styles.buttonText}>Estudar</Text>
         </RectButton>
-        <RectButton
-          onPress={handleNavigateToGiveClssesPage}
+
+        <RectButton 
+          onPress={handleNavigateToGiveClassesPage} 
           style={[styles.button, styles.buttonSecondary]}
         >
           <Image source={giveClassesIcon} />
+
           <Text style={styles.buttonText}>Dar aulas</Text>
         </RectButton>
       </View>

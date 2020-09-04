@@ -2,7 +2,7 @@ import { Request, Response } from 'express';
 import db from '../database/connection';
 
 export default class ConnectionsController {
-  async index (request: Request, response: Response) {
+  async index(request: Request, response: Response) {
     const totalConnections = await db('connections').count('* as total');
 
     const { total } = totalConnections[0];

@@ -1,4 +1,4 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
@@ -16,12 +16,12 @@ const styles = StyleSheet.create({
 
   label: {
     color: '#d4c2ff',
-    fontFamily: 'Poppins_400Regular',
+    fontFamily: 'Poppins_400Regular'
   },
 
   inputGroup: {
     flexDirection: 'row',
-    justifyContent: 'space-between',
+    justifyContent: 'space-between'
   },
 
   inputBlock: {
@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
 
   input: {
     height: 54,
-    backgroundColor: '#fff',
+    backgroundColor: '#FFF',
     borderRadius: 8,
     justifyContent: 'center',
     paddingHorizontal: 16,
@@ -48,10 +48,10 @@ const styles = StyleSheet.create({
   },
 
   submitButtonText: {
-    color: '#fff',
+    color: '#FFF',
     fontFamily: 'Archivo_700Bold',
-    fontSize: 16,
+    fontSize: 16
   },
-});
+})
 
 export default styles;

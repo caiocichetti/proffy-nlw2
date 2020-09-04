@@ -1,13 +1,13 @@
-import { StyleSheet } from 'react-native';
+import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: '#fff',
+    backgroundColor: '#FFF',
     borderWidth: 1,
     borderColor: '#e6e6f0',
     borderRadius: 8,
     marginBottom: 16,
-    overflow: 'hidden',
+    overflow: 'hidden'
   },
 
   profile: {
@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     width: 64,
     height: 64,
     borderRadius: 32,
-    backgroundColor: '#eee',
+    backgroundColor: '#eee'
   },
 
   profileInfo: {
@@ -37,15 +37,15 @@ const styles = StyleSheet.create({
     fontFamily: 'Poppins_400Regular',
     color: '#6a6180',
     fontSize: 12,
-    marginTop: 4,
+    marginTop: 4
   },
 
   bio: {
-    margin: 24,
+    marginHorizontal: 24,
     fontFamily: 'Poppins_400Regular',
     fontSize: 14,
     lineHeight: 24,
-    color: '#6a6180'
+    color: '#6a6180',
   },
 
   footer: {
@@ -98,11 +98,11 @@ const styles = StyleSheet.create({
   },
 
   contactButtonText: {
-    color: '#fff',
+    color: '#FFF',
     fontFamily: 'Archivo_700Bold',
     fontSize: 16,
-    marginLeft: 16,
-  }
+    marginLeft: 16
+  },
 });
 
 export default styles;

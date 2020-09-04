@@ -3,26 +3,26 @@ import { StyleSheet } from 'react-native';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#8257e5',
+    backgroundColor: '#8257E5',
     justifyContent: 'center',
-    padding: 40,
+    padding: 40
   },
 
   banner: {
     width: '100%',
-    resizeMode: 'contain',
+    resizeMode: 'contain'
   },
 
   title: {
     fontFamily: 'Poppins_400Regular',
-    color: '#fff',
+    color: '#FFF',
     fontSize: 20,
     lineHeight: 30,
     marginTop: 80,
   },
 
   titleBold: {
-    fontFamily: 'Poppins_600SemiBold',
+    fontFamily: 'Poppins_600SemiBold'
   },
 
   buttonsContainer: {
@@ -37,7 +37,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#333',
     borderRadius: 8,
     padding: 24,
-    justifyContent: 'space-between',
+    justifyContent: 'space-between'
   },
 
   buttonPrimary: {
@@ -45,12 +45,12 @@ const styles = StyleSheet.create({
   },
 
   buttonSecondary: {
-    backgroundColor: '#04d361',
+    backgroundColor: '#04d361'
   },
 
   buttonText: {
     fontFamily: 'Archivo_700Bold',
-    color: '#fff',
+    color: '#FFF',
     fontSize: 20,
   },
 

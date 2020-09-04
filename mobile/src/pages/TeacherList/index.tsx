@@ -1,26 +1,25 @@
-import React, { useState, useEffect } from 'react';
-
+import React, { useState } from 'react';
 import { View, ScrollView, Text, TextInput } from 'react-native';
 import { BorderlessButton, RectButton } from 'react-native-gesture-handler';
-import AsyncStorage from '@react-native-community/async-storage';
-import { useFocusEffect } from '@react-navigation/native';
 import { Feather } from '@expo/vector-icons';
-
-import api from '../../services/api';
+import AsyncStorage from '@react-native-community/async-storage';
 
 import PageHeader from '../../components/PageHeader';
 import TeacherItem, { Teacher } from '../../components/TeacherItem';
 
+import api from '../../services/api';
+
 import styles from './styles';
+import { useFocusEffect } from '@react-navigation/native';
 
 function TeacherList() {
   const [teachers, setTeachers] = useState([]);
   const [favorites, setFavorites] = useState<number[]>([]);
   const [isFiltersVisible, setIsFiltersVisible] = useState(false);
 
-  const [subject, setSubject] = useState('Geografia');
-  const [week_day, setWeekDay] = useState('1');
-  const [time, setTime] = useState('9:00');
+  const [subject, setSubject] = useState('');
+  const [week_day, setWeekDay] = useState('');
+  const [time, setTime] = useState('');
 
   function loadFavorites() {
     AsyncStorage.getItem('favorites').then(response => {
@@ -28,7 +27,7 @@ function TeacherList() {
         const favoritedTeachers = JSON.parse(response);
         const favoritedTeachersIds = favoritedTeachers.map((teacher: Teacher) => {
           return teacher.id;
-        });
+        })
 
         setFavorites(favoritedTeachersIds);
       }
@@ -37,7 +36,7 @@ function TeacherList() {
 
   useFocusEffect(() => {
     loadFavorites();
-  })
+  });
 
   function handleToggleFiltersVisible() {
     setIsFiltersVisible(!isFiltersVisible);
@@ -48,8 +47,10 @@ function TeacherList() {
 
     const response = await api.get('classes', {
       params: {
-        subject, week_day, time,
-      },
+        subject,
+        week_day,
+        time,
+      }
     });
 
     setIsFiltersVisible(false);
@@ -58,11 +59,11 @@ function TeacherList() {
 
   return (
     <View style={styles.container}>
-      <PageHeader
-        title="Proffys disponíveis"
+      <PageHeader 
+        title="Proffys disponíveis" 
         headerRight={(
           <BorderlessButton onPress={handleToggleFiltersVisible}>
-            <Feather name="filter" size={20} color="#fff" />
+            <Feather name="filter" size={20} color="#FFF" />
           </BorderlessButton>
         )}
       >
@@ -101,14 +102,11 @@ function TeacherList() {
               </View>
             </View>
 
-            <RectButton
-              style={styles.submitButton}
-              onPress={handleFiltersSubmit}
-            >
+            <RectButton onPress={handleFiltersSubmit} style={styles.submitButton}>
               <Text style={styles.submitButtonText}>Filtrar</Text>
             </RectButton>
           </View>
-        )}
+        )}          
       </PageHeader>
 
       <ScrollView
@@ -120,12 +118,12 @@ function TeacherList() {
       >
         {teachers.map((teacher: Teacher) => {
           return (
-            <TeacherItem
-              key={teacher.id}
+            <TeacherItem 
+              key={teacher.id} 
               teacher={teacher}
               favorited={favorites.includes(teacher.id)}
             />
-          );
+          )
         })}
       </ScrollView>
     </View>

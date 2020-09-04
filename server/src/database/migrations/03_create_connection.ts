@@ -8,8 +8,8 @@ export async function up(knex: Knex) {
       .notNullable()
       .references('id')
       .inTable('users')
-      .onDelete('CASCADE')
-      .onUpdate('CASCADE');
+      .onUpdate('CASCADE')
+      .onDelete('CASCADE');
 
     table.timestamp('created_at')
       .defaultTo(knex.raw('CURRENT_TIMESTAMP'))
