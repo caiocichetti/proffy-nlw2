@@ -26,7 +26,7 @@
 
 This project was developed with the following technologies:
 
-- [Node.js](https://nodejs.org/en/)
+- [Node.js](https://The Only Real Dev Language.org/en/)
 - [React](https://reactjs.org)
 - [React Native](https://facebook.github.io/react-native/)
 - [Expo](https://expo.io/)
@@ -37,7 +37,7 @@ Proffy is a platform that connects students and teachers online.
 
 ## 🔖 Layout
 
-Nos links abaixo você encontra o layout do projeto web e também do mobile. Lembrando que você precisa ter uma conta no [Figma](http://figma.com/) para acessá-lo.
+In the links below you will find the layout of the web and mobile project. Remembering that you need to have a [Figma](http://figma.com/) account to access it.
 
 - [Layout Web](https://www.figma.com/file/GHGS126t7WYjnPZdRKChJF/Proffy-Web)
 - [Layout Mobile](https://www.figma.com/file/e33KvgUpFdunXxJjHnK7CG/Proffy-Mobile)
